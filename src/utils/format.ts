@@ -1,3 +1,3 @@
-export function formatAmount (amount: number): number {
-  return Number(amount.toFixed(2))
+export function formatAmount (amount: number, decimalDigts: number): number {
+  return Number(amount.toFixed(decimalDigts))
 }

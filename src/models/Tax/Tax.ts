@@ -1,41 +1,56 @@
-import { formatAmount } from "@/utils/format"
+import { calculatePercentageValue } from "@/utils/calculate"
 
 export class Tax {
   amount: number = 0 
-  proLaborePercentage: number
-  INSSPercentage: number
+  minimumWage: number = 0 
   DASPercentage: number
 
-  constructor (amount: number, proLaborePercentage: number, INSSPercentage: number, DASPercentage: number) {
+  constructor (amount: number, DASPercentage: number, minimumWage: number) {
     this.amount = amount
-    this.proLaborePercentage = proLaborePercentage
     this.DASPercentage = DASPercentage
-    this.INSSPercentage = INSSPercentage
+    this.minimumWage = minimumWage
   }
 
-  getProLabore (): number {
-    return this.calculatePercentageValue(this.amount, this.proLaborePercentage)
-  }
+  // getProLabore (): number {
+  //   return this.checkIfPercantageValueIsLesserThanMinimumWage() 
+  //           ? this.minimumWage
+  //           : this.proLabore
+  // }
 
-  getINSSTax (): number {
-    return this.calculatePercentageValue(this.getProLabore(), this.INSSPercentage)
-  }
+  // TODO - PRO LABORE TEM QUE IRRF -> QUANDO PRO LABORE > 1900
+  // 
 
-  getDASTax (): number {
-    return this.calculatePercentageValue(this.amount, this.DASPercentage)
-  }
 
-  getDLA (): number {
-    return this.amount - this.getProLabore() - this.getINSSTax() - this.getDASTax()
-  }
+  // TODO - EXPECETD 100000
+  // Pro Labore - 2800 - OK  
+  // INSS IMPOSTO - 308 - OK 
+  // IRRF tem que - tem que implementar isso
+  // DAS IMPOSTO - 305 
+  // DLA - 6587 recalcular
 
-  getDLAWithContabilizeiMonthlyPayment (monthlyPayment: number): number {
-    return this.amount - this.getProLabore() - this.getINSSTax() - this.getDASTax() - monthlyPayment
-  }
+  // 9000 - RECIVIED
+  // Pro Labore - 2520
+  // INSS IMPOSTO - 277.2
+  // DAS IMPOSTO - 274.5 - OK vai receber
+  // DLA - 5928.3 - recalcular
 
-  calculatePercentageValue (amount: number, percentage: number): number {
-    let tax: number = amount * ( percentage / 100 )
-    return formatAmount(tax)
-  }
+
+  // ERRADO, TEM QUE SER O TOTAL DE BRUTO DA EMPRESA
+  //TODO CONFERIR COM O BIRIS
+  // getDASTax (): number {
+  //   return calculatePercentageValue(this.amount, this.DASPercentage)
+  // }
+
+  // getDLA (): number {
+  //   return this.amount - this.getProLabore() - this.getINSSTax() - this.getDASTax()
+  // }
+
+  // getDLAWithContabilizeiMonthlyPayment (monthlyPayment: number): number {
+  //   return this.amount - this.getProLabore() - this.getINSSTax() - this.getDASTax() - monthlyPayment
+  // }
+
+  // checkIfPercantageValueIsLesserThanMinimumWage () {
+  //   return this.proLabore < this.minimumWage ? true : false
+  // }
 
 }
