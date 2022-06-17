@@ -46,13 +46,14 @@ export class Inss {
     }
   }
   irrfDeduction: any
-  // irrfTax: number
+  irrfTax: number
 
   constructor (amount: number) {
     this.amount = formatAmount(amount, 2)
     this.inssDeduction = this.getInssDeduction()
     this.inssTax = this.getInssTax()
-    
+    this.irrfDeduction = this.getIrrfDeduction()
+    this.irrfTax = this.getIrrfTax()
   }
 
   getInssDeduction (): any {
@@ -67,7 +68,7 @@ export class Inss {
       case (this.amount >= 2427.36 && this.amount <= 3641.03): { 
         return this.inssDeductionTable['3']
       }
-      case (this.amount >= 3641.04 && this.amount <= 7087.22): { 
+      case (this.amount >= 3641.04): { 
         return this.inssDeductionTable['4']
       }
    } 
@@ -85,7 +86,7 @@ export class Inss {
       case (this.amount > 0 && this.amount <= 1903.98): { 
          return this.irffDeductionTable['1']
       }
-      case (this.amount >= 1903.99 && this.amount <= 2826.65): { 
+      case (this.amount >= 1903.98 && this.amount <= 2826.65): { 
         return this.irffDeductionTable['2']
       }
       case (this.amount >= 2826.66 && this.amount <= 3751.05): { 
@@ -102,8 +103,9 @@ export class Inss {
   }
 
   getIrrfTax (): number {
-    let inssTax = calculatePercentageValue(this.amount, this.inssDeduction.aliquot) - this.inssDeduction.deduction
-    return formatAmount(inssTax, 2)
+    let amountWithoutInssTax = this.amount - this.inssTax
+    let irrfTax = calculatePercentageValue(amountWithoutInssTax, this.irrfDeduction.aliquot) - this.irrfDeduction.deduction
+    return formatAmount(irrfTax, 2)
   }
 
 }
