@@ -58,20 +58,20 @@ export class Inss {
 
   getInssDeduction (): any {
 
-    switch(true) { 
-      case (this.amount > 0 && this.amount <= 1212): { 
-         return this.inssDeductionTable['1']
+    switch (true) {
+      case (this.amount > 0 && this.amount <= 1212): {
+        return this.inssDeductionTable['1']
       }
-      case (this.amount >= 1212.01 && this.amount <= 2427.35): { 
+      case (this.amount >= 1212.01 && this.amount <= 2427.35): {
         return this.inssDeductionTable['2']
       }
-      case (this.amount >= 2427.36 && this.amount <= 3641.03): { 
+      case (this.amount >= 2427.36 && this.amount <= 3641.03): {
         return this.inssDeductionTable['3']
       }
-      case (this.amount >= 3641.04): { 
+      case (this.amount >= 3641.04): {
         return this.inssDeductionTable['4']
       }
-   } 
+    }
 
   }
 
@@ -82,30 +82,31 @@ export class Inss {
 
   getIrrfDeduction (): any {
 
-    switch(true) { 
-      case (this.amount > 0 && this.amount <= 1903.98): { 
-         return this.irffDeductionTable['1']
+    switch (true) {
+      case (this.amount > 0 && this.amount <= 1903.98): {
+        return this.irffDeductionTable['1']
       }
-      case (this.amount >= 1903.98 && this.amount <= 2826.65): { 
+      case (this.amount >= 1903.98 && this.amount <= 2826.65): {
         return this.irffDeductionTable['2']
       }
-      case (this.amount >= 2826.66 && this.amount <= 3751.05): { 
+      case (this.amount >= 2826.66 && this.amount <= 3751.05): {
         return this.irffDeductionTable['3']
       }
-      case (this.amount >= 3751.06 && this.amount <= 4664.68): { 
+      case (this.amount >= 3751.06 && this.amount <= 4664.68): {
         return this.irffDeductionTable['4']
       }
-      case (this.amount > 4664.68): { 
+      case (this.amount > 4664.68): {
         return this.irffDeductionTable['5']
       }
-   } 
+    }
 
   }
 
   getIrrfTax (): number {
     let amountWithoutInssTax = this.amount - this.inssTax
     let irrfTax = calculatePercentageValue(amountWithoutInssTax, this.irrfDeduction.aliquot) - this.irrfDeduction.deduction
-    return formatAmount(irrfTax, 2)
+
+    return irrfTax < 0 ? formatAmount(0, 0) : formatAmount(irrfTax, 2)
   }
 
 }
