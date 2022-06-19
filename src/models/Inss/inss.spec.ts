@@ -110,31 +110,35 @@ describe('Inss test', () => {
       expect(inss.irrfTax).toBe(0)
     })
 
-    // it('Aliquot equals to 9% and deduction equals to 18.18', () => {
-    //   const inss: Inss = new Inss(1903.99)
-    //   console.log(inss.irrfDeduction.aliquot)
-    //   console.log(inss.irrfDeduction.deduction)
-    //   expect(inss.irrfTax).toBe(0)
-    // }) 
+    it('Aliquot equals to 7.5% and deduction equals to 142.80, but irrf is negative', () => {
+      const inss: Inss = new Inss(1903.99)
+      expect(inss.irrfTax).toBe(0)
+    }) 
     // 155,87
 
-    // it('Aliquot equals to 12% and deduction equals to 91', () => {
-    //   const inss: Inss = new Inss(2826.66)
+    it('Aliquot equals to 7.5% and deduction equals to 142.80', () => {
+      const inss: Inss = new Inss(2826.65)
 
-    //   expect(inss.irrfTax).toBe(200.28)
-    // })
+      expect(inss.irrfTax).toBe(50.58)
+    })
 
-    // it('Aliquot equals to 14% and deduction equals to 163.82', () => {
-    //   const inss: Inss = new Inss(3751.06)
+    it('Aliquot equals to 15% and deduction equals to 354.80', () => {
+      const inss: Inss = new Inss(2826.66)
 
-    //   expect(inss.irrfTax).toBe(345.93)
-    // })
+      expect(inss.irrfTax).toBe(31.97)
+    })
 
-    // it('Aliquot equals to 14% and deduction equals to 163.82', () => {
-    //   const inss: Inss = new Inss(4664.68)
+    it('Aliquot equals to 22,5% and deduction equals to 636,13', () => {
+      const inss: Inss = new Inss(3751.06)
 
-    //   expect(inss.irrfTax).toBe(345.93)
-    // })
+      expect(inss.irrfTax).toBe(126.56)
+    })
+
+    it('Aliquot equals to 27,5% and deduction equals to 869,36', () => {
+      const inss: Inss = new Inss(4664.69)
+
+      expect(inss.irrfTax).toBe(278.89)
+    })
 
   })
 
