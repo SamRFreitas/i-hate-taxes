@@ -114,7 +114,6 @@ describe('Inss test', () => {
       const inss: Inss = new Inss(1903.99)
       expect(inss.irrfTax).toBe(0)
     }) 
-    // 155,87
 
     it('Aliquot equals to 7.5% and deduction equals to 142.80', () => {
       const inss: Inss = new Inss(2826.65)
@@ -138,6 +137,16 @@ describe('Inss test', () => {
       const inss: Inss = new Inss(4664.69)
 
       expect(inss.irrfTax).toBe(278.89)
+    })
+
+  })
+
+  describe('getProLabore', () => {
+
+    it('Pro-Labore with amount equals to 5200', () => {
+      const inss: Inss = new Inss(5200)
+
+      expect(inss.proLabore).toBe(4230.33)
     })
 
   })

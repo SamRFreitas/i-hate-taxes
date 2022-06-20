@@ -47,6 +47,7 @@ export class Inss {
   }
   irrfDeduction: any
   irrfTax: number
+  proLabore: number
 
   constructor (amount: number) {
     this.amount = formatAmount(amount, 2)
@@ -54,6 +55,7 @@ export class Inss {
     this.inssTax = this.getInssTax()
     this.irrfDeduction = this.getIrrfDeduction()
     this.irrfTax = this.getIrrfTax()
+    this.proLabore = this.getProLabore()
   }
 
   getInssDeduction (): any {
@@ -107,6 +109,10 @@ export class Inss {
     let irrfTax = calculatePercentageValue(amountWithoutInssTax, this.irrfDeduction.aliquot) - this.irrfDeduction.deduction
 
     return irrfTax < 0 ? formatAmount(0, 0) : formatAmount(irrfTax, 2)
+  }
+
+  getProLabore () {
+    return this.amount - this.inssTax - this.irrfTax
   }
 
 }
