@@ -21,12 +21,12 @@ export class Vrau {
     this.dla = this.getDla()
   }
 
-  getAmountForInssCalculation () {
+  getAmountForInssCalculation (): number {
     let amountForInssCalculation = calculatePercentageValue(this.amount, this.proLaborePercentage)
     return amountForInssCalculation > 1100 ? amountForInssCalculation : this.minimumWage
   }
 
-  getDla () {
+  getDla (): number {
     return this.amount - this.das.dasTax - this.inss.proLabore - this.inss.inssTax - this.inss.irrfTax
   }
 

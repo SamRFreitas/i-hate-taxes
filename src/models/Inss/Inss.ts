@@ -111,7 +111,7 @@ export class Inss {
     return irrfTax < 0 ? formatAmount(0, 0) : formatAmount(irrfTax, 2)
   }
 
-  getProLabore () {
+  getProLabore (): number {
     return this.amount - this.inssTax - this.irrfTax
   }
 

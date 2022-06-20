@@ -11,7 +11,7 @@ export class Das {
     this.dasTax = this.getDasTax()
   }
 
-  getDasTax () {
+  getDasTax (): number {
     let percentageValue = calculatePercentageValue(this.amount, this.dasPercentage)
     return formatAmount(percentageValue, 2)
   }
