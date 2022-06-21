@@ -5,43 +5,43 @@ export class Inss {
   amount: number = 0
   inssDeductionTable = {
     '1': {
-      aliquot: formatAmount(7.5, 1),
+      aliquot: formatAmount(7.5, 2),
       deduction: formatAmount(0, 0)
     },
     '2': {
-      aliquot: formatAmount(9, 0),
+      aliquot: formatAmount(9, 2),
       deduction: formatAmount(18.18, 2)
     },
     '3': {
-      aliquot: formatAmount(12, 0),
-      deduction: formatAmount(91, 0)
+      aliquot: formatAmount(12, 2),
+      deduction: formatAmount(91, 2)
     },
     '4': {
-      aliquot: formatAmount(14, 0),
+      aliquot: formatAmount(14, 2),
       deduction: formatAmount(163.82, 2)
     },
   }
   inssDeduction: any
   inssTax: number
-  irffDeductionTable = {
+  irrfDeductionTable = {
     '1': {
       aliquot: formatAmount(0, 0),
       deduction: formatAmount(0, 0)
     },
     '2': {
-      aliquot: formatAmount(7.5, 1),
+      aliquot: formatAmount(7.5, 2),
       deduction: formatAmount(142.80, 2)
     },
     '3': {
-      aliquot: formatAmount(15, 0),
+      aliquot: formatAmount(15, 2),
       deduction: formatAmount(354.80, 2)
     },
     '4': {
-      aliquot: formatAmount(22.5, 1),
+      aliquot: formatAmount(22.5, 2),
       deduction: formatAmount(636.13, 2)
     },
     '5': {
-      aliquot: formatAmount(27.5, 1),
+      aliquot: formatAmount(27.5, 2),
       deduction: formatAmount(869.36, 2)
     }
   }
@@ -83,22 +83,23 @@ export class Inss {
   }
 
   getIrrfDeduction (): any {
+    let amountWithoutInssTax: number = this.amount - this.inssTax
 
     switch (true) {
-      case (this.amount > 0 && this.amount <= 1903.98): {
-        return this.irffDeductionTable['1']
+      case (amountWithoutInssTax > 0 && amountWithoutInssTax <= 1903.98): {
+        return this.irrfDeductionTable['1']
       }
-      case (this.amount >= 1903.98 && this.amount <= 2826.65): {
-        return this.irffDeductionTable['2']
+      case (amountWithoutInssTax >= 1903.99 && amountWithoutInssTax <= 2826.65): {
+        return this.irrfDeductionTable['2']
       }
-      case (this.amount >= 2826.66 && this.amount <= 3751.05): {
-        return this.irffDeductionTable['3']
+      case (amountWithoutInssTax >= 2826.66 && amountWithoutInssTax <= 3751.05): {
+        return this.irrfDeductionTable['3']
       }
-      case (this.amount >= 3751.06 && this.amount <= 4664.68): {
-        return this.irffDeductionTable['4']
+      case (amountWithoutInssTax >= 3751.06 && amountWithoutInssTax <= 4664.68): {
+        return this.irrfDeductionTable['4']
       }
-      case (this.amount > 4664.68): {
-        return this.irffDeductionTable['5']
+      case (amountWithoutInssTax > 4664.68): {
+        return this.irrfDeductionTable['5']
       }
     }
 
@@ -112,7 +113,8 @@ export class Inss {
   }
 
   getProLabore (): number {
-    return this.amount - this.inssTax - this.irrfTax
+    let proLabore = this.amount - this.inssTax - this.irrfTax
+    return formatAmount(proLabore, 2)
   }
 
 }
