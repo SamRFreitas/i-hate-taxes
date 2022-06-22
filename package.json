@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "jest": "npm run test:unit",
+    "prototype": "tsc src/lancamento-de-caixa.ts && node src/lancamento-de-caixa.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
