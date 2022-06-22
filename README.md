@@ -16,7 +16,7 @@
 npm run prototype
 ```
 
-#### Se der certo você vai saber (To com preguiça de colocar outra imagem). E se não prstar você me fala.
+#### Se der certo você vai saber (To com preguiça de colocar outra imagem). E se num prestar você me fala.
 
 
 
