@@ -1,4 +1,4 @@
-import { calculatePercentageValue } from '@/utils/calculate';
+import { calculatePercentageValue } from '../utils/calculate';
 
 describe('Format Test', () => {
   

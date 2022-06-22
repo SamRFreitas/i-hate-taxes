@@ -1,5 +1,5 @@
-import { formatAmount } from "@/utils/format"
-import { calculatePercentageValue } from "@/utils/calculate"
+import { formatAmount } from "../../utils/format"
+import { calculatePercentageValue } from "../../utils/calculate"
 
 export class Inss {
   amount: number = 0
