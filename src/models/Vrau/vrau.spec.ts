@@ -60,10 +60,10 @@ describe('Vrau test', () => {
       })
 
       it('With recivied amount, the inss will use the expected amount, dla and das will use recivied amount', () => {
-
         jest.spyOn(Das.prototype, 'getDasTax').mockImplementation(() => 2)
 
         const vrau = new Vrau(10000, 28, 9000)
+        
         expect(vrau.dla).toBe(7888)
       })
     })
