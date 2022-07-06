@@ -5,7 +5,7 @@ import { Inss } from "../Inss/Inss"
 export class Vrau {
   amount: number 
   reciviedAmount: number
-  minimumWage: number = 1100 
+  minimumWage: number = 1212 
   proLaborePercentage: number
   amountForInssCalculation: number
   inss: Inss
@@ -32,7 +32,7 @@ export class Vrau {
 
   getAmountForInssCalculation (): number {
     let amountForInssCalculation = calculatePercentageValue(this.amount, this.proLaborePercentage)
-    return amountForInssCalculation > 1100 ? amountForInssCalculation : this.minimumWage
+    return amountForInssCalculation > this.minimumWage ? amountForInssCalculation : this.minimumWage
   }
 
   getDla (amount: number): number {
