@@ -6,7 +6,8 @@ import { Inss } from "../Inss/Inss"
 export class Vrau {
   amount: number 
   reciviedAmount: number
-  minimumWage: number = 1212 
+  minimumWage = 1212 
+  contabilizeiMonthlyFee = 48
   proLaborePercentage: number
   amountForInssCalculation: number
   inss: Inss
@@ -14,7 +15,7 @@ export class Vrau {
   dla: number
 
 
-  constructor (amount: number, proLaborePercentage: number, reciviedAmount: number = 0) {
+  constructor (amount: number, proLaborePercentage: number, reciviedAmount = 0) {
     this.amount = amount
     this.reciviedAmount = reciviedAmount
     this.proLaborePercentage = proLaborePercentage
@@ -37,7 +38,7 @@ export class Vrau {
   }
 
   getDla (amount: number): number {
-    const dla = amount - this.das.dasTax - this.inss.proLabore - this.inss.inssTax - this.inss.irrfTax
+    const dla = amount - this.das.dasTax - this.inss.proLabore - this.inss.inssTax - this.inss.irrfTax - this.contabilizeiMonthlyFee
     return formatAmount(dla, 2)
   }
 
