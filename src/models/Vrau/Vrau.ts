@@ -7,7 +7,7 @@ export class Vrau {
   amount: number 
   reciviedAmount: number
   minimumWage = 1212 
-  contabilizeiMonthlyFee = 48
+  contabilizeiMonthlyFee = 54.5
   proLaborePercentage: number
   amountForInssCalculation: number
   inss: Inss
