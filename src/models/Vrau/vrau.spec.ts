@@ -19,7 +19,7 @@ describe('Vrau test', () => {
     it('When INSS Calculation value is lesser or equals to 1212', () => {
       const vrau = new Vrau(2000, 28)
       
-      expect(vrau.amountForInssCalculation).toBe(1212)
+      expect(vrau.amountForInssCalculation).toBe(1320)
     })
 
     it('When INSS Calculation value use 28% of amount', () => {
