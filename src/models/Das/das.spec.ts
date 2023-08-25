@@ -5,7 +5,7 @@ describe('Das test - ', () => {
   it('getDasTax', () => {
     const das = new Das(100)
     
-    expect(das.dasTax).toBe(3.05)
+    expect(das.dasTax).toBe(6.5)
   })
   
 })
