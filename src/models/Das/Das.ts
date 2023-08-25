@@ -2,8 +2,8 @@ import { calculatePercentageValue } from "../../utils/calculate"
 import { formatAmount } from "../../utils/format"
 
 export class Das {
-  amount: number = 0  
-  dasPercentage: number = 3.05
+  amount = 0  
+  dasPercentage = 6.5
   dasTax: number
 
   constructor (amount: number) {
@@ -12,7 +12,7 @@ export class Das {
   }
 
   getDasTax (): number {
-    let percentageValue = calculatePercentageValue(this.amount, this.dasPercentage)
+    const percentageValue = calculatePercentageValue(this.amount, this.dasPercentage)
     return formatAmount(percentageValue, 2)
   }
 }
