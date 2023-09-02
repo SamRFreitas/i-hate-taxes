@@ -1,22 +1,22 @@
 <template>
   <div class="flex flex-col justify-center items-center ">
-    <FormView @update-taxes="updatecalculatedValues($event)"/>
-    <TableData :values="state.calculatedValues" class="mt-4"/>
+    <Form @update-taxes="updatecalculatedValues($event)" />
+    <Modal :is-open="state.isModalOpen" :title="state.modalTitle" :values="state.calculatedValues" @close-modal="state.isModalOpen = false" class="mt-4"/>
   </div>
 </template>
 
 <script lang="ts">
 
 import { defineComponent, reactive } from 'vue'
-import FormView from './FormView.vue'
-import TableData from '../components/TableData.vue'
+import Form from '../components/Form.vue'
+import Modal from '../components/Modal.vue'
 import { Vrau } from '@/models/Vrau/Vrau'
 
 export default defineComponent({
   name: 'HomeView',
   components: {
-    FormView,
-    TableData
+    Form,
+    Modal
   },
   setup () {
 
@@ -31,7 +31,9 @@ export default defineComponent({
         dla: 0,
         taxesTotal: 0,
         profit: 0,
-      }
+      },
+      isModalOpen: false,
+      modalTitle: 'Lançamento de Caixa'
 
     })
 
@@ -46,7 +48,8 @@ export default defineComponent({
       state.calculatedValues.proLabore = vrau.inss.getProLabore()
       state.calculatedValues.taxesTotal = vrau.inss.getInssTax() + vrau.inss.getIrrfTax() + vrau.das.dasTax + vrau.contabilizeiMonthlyFee
       state.calculatedValues.profit = vrau.inss.getProLabore() + vrau.dla
-      
+
+      state.isModalOpen = true
     }
 
     return {
