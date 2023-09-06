@@ -2,7 +2,7 @@ import { formatAmount } from "../../utils/format"
 import { calculatePercentageValue } from "../../utils/calculate"
 
 export class Inss {
-  amount: number = 0
+  amount: number
   // inssDeductionTable = {
   //   '1': {
   //     aliquot: formatAmount(7.5, 2),

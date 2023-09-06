@@ -1,6 +1,6 @@
 import { Vrau } from "./models/Vrau/Vrau"
 
-const vrau1: Vrau = new Vrau(10000, 28)
+const vrau1: Vrau = new Vrau(10000, 28, 0)
 
 console.log(`------------------Valores--------------------`)
 console.log(`Contabilizei:----> ${vrau1.contabilizeiMonthlyFee}`)

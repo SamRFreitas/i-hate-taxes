@@ -1,9 +1,9 @@
 <template>
-  <nav class="">
-      <router-link to="/">Home</router-link> |
-       <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  
+  <div class="flex flex-col  justify-center items-center p-10">
+    <img alt="Vue logo" src="../src/assets/camaleao.png" width="200" height="200"/>
+    <router-view class="mt-10"/>
+  </div>
 </template>
 
 <style>
