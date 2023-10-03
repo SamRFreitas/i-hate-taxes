@@ -10,7 +10,7 @@
 import { defineComponent, reactive } from 'vue'
 import Form from '../components/Form.vue'
 import Modal from '../components/Modal.vue'
-import { Vrau } from '@/models/Vrau/Vrau'
+import { Vrau } from '@/business_rules/Vrau/Vrau'
 import { formatAmount } from "../utils/format" 
 
 export default defineComponent({

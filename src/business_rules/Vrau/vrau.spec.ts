@@ -1,4 +1,4 @@
-import { Das } from './../Das/Das'
+import { Das } from '../Das/Das'
 import { Inss } from '../Inss/Inss'
 import { Vrau } from './Vrau'
 

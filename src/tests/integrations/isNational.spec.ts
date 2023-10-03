@@ -1,4 +1,4 @@
-import { Vrau } from "@/models/Vrau/Vrau"
+import { Vrau } from "@/business_rules/Vrau/Vrau"
 
 describe('Models - Vrau and Das handle when isNational or NOT', () => {
 
