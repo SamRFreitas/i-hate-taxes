@@ -11,6 +11,7 @@ import { defineComponent, reactive } from 'vue'
 import Form from '../components/Form.vue'
 import Modal from '../components/Modal.vue'
 import { Vrau } from '@/models/Vrau/Vrau'
+import { formatAmount } from "../utils/format" 
 
 export default defineComponent({
   name: 'HomeView',
@@ -46,7 +47,7 @@ export default defineComponent({
       state.calculatedValues.das = vrau.das.dasTax
       state.calculatedValues.dla = vrau.dla
       state.calculatedValues.proLabore = vrau.inss.getProLabore()
-      state.calculatedValues.taxesTotal = vrau.inss.getInssTax() + vrau.inss.getIrrfTax() + vrau.das.dasTax + vrau.contabilizeiMonthlyFee
+      state.calculatedValues.taxesTotal = formatAmount((vrau.inss.getInssTax() + vrau.inss.getIrrfTax() + vrau.das.dasTax + vrau.contabilizeiMonthlyFee), 2)
       state.calculatedValues.profit = vrau.inss.getProLabore() + vrau.dla
 
       state.isModalOpen = true
