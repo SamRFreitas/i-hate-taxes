@@ -21,7 +21,7 @@ export default defineComponent({
   props: {
     label: {
       type: String,
-      default: 'Amount',
+      default: 'Valor Esperado',
     }
   },
   emits: ['update:modelValue'],

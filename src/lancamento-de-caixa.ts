@@ -1,4 +1,4 @@
-import { Vrau } from "./models/Vrau/Vrau"
+import { Vrau } from "./business_rules/Vrau/Vrau"
 
 const vrau1: Vrau = new Vrau(10000, 28, 0)
 
