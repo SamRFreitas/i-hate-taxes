@@ -1,0 +1,14 @@
+name: Deploy
+
+on: 
+  merge:
+    branches: [develop]
+
+jobs:
+  just-test:
+    name: Just testing deploy
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Bulding..."
+      - run: echo "Deploying..."
+      - run: echo "Finished! :)"
