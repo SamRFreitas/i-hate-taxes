@@ -22,7 +22,7 @@ jobs:
           node-version: 18
           cache: 'npm'
       - name: Run Tests
-        run: npm test
+        run: npm run jest
       - run: echo "Tests finished!"
   
   #Important to use
