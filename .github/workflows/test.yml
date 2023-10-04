@@ -1,0 +1,48 @@
+name: Learning Github Actions
+
+on:
+  push:
+    branches: [ develop ]
+
+# permissions:
+#   contents: read
+#   pull-requests: write
+
+jobs:
+  
+  # Maybe just test?
+  test:
+    name: Test
+    # needs: [Explore-GitHub-Actions]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: echo "Testing the project"
+      - name: Using Node.js 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Run Tests
+        run: npm test
+      - run: echo "Tests finished!"
+  
+  #Important to use
+  open-draft-pull-request:
+    name: Open Pull Request
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "develop"
+
+  just-test:
+    name: Just Test
+    needs: [open-draft-pull-request]
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Tested"
+      - run: echo "Finish"
