@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "docker-compose up",
+    "dev": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "jest": "jest",
+    "prototype": "tsc src/lancamento-de-caixa.ts && node src/lancamento-de-caixa.js && rm -rf ./src/models/Das/Das.js && rm -rf ./src/models/Inss/Inss.js && rm -rf ./src/models/Vrau/Vrau.js"
   },
   "dependencies": {
     "core-js": "^3.8.3",
@@ -16,7 +18,6 @@
     "vuex": "^4.0.0"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
     "@vue/cli-plugin-babel": "~5.0.0",
@@ -34,10 +35,9 @@
     "babel-jest": "^27.0.6",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
-    "jest": "^27.0.5",
+    "jest": "^27.5.1",
     "postcss": "^8.4.14",
     "tailwindcss": "^3.0.24",
-    "ts-jest": "^27.0.4",
     "typescript": "~4.5.5"
   }
 }
