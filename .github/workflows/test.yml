@@ -3,7 +3,9 @@ name: Learning Github Actions
 on:
   push:
     branches: [ develop ]
-
+  pull-request:
+    branches: [ develop ]
+    
 # permissions:
 #   contents: read
 #   pull-requests: write
