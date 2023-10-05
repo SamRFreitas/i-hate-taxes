@@ -1,5 +1,7 @@
 # i-hate-taxes
 
+https://img.shields.io/badge/Vue.js-4FC08D.svg?style=for-the-badge&logo=vuedotjs&logoColor=white
+
 ## AQUI VINI!!!!
 
 ## SE VOCÊ TIVER NA BRANCH <b>main</b> MUDA PRA BRANCH <b>implementation/unit-tests</b>
