@@ -6,7 +6,7 @@ on:
     - '*'
     - '!develop'
     - '!main'
-    
+#just a test
 # permissions:
 #   contents: read
 #   pull-requests: write
