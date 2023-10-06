@@ -1,8 +1,9 @@
 <template>
 
-  <div class="w-full flex justify-center border rounded-2xl shadow-xl">
-    <div class="flex flex-col justify-center items-center  w-full max-w-md py-4 px-28 ">
+  <div class="w-full flex justify-center md:border md:rounded-2xl md:shadow-xl">
 
+    <div class="flex flex-col justify-center items-center  w-full max-w-md py-4 md:px-28 ">
+      
       <InputAmount v-model="state.amount"/>
       <span v-if="state.amountError" class="text-sm text-red-600"> Campo vazio ou valor inválido </span>
       
@@ -47,7 +48,7 @@ export default defineComponent({
 
     const state = reactive({
 
-      isNational: false,
+      isNational: true,
       amount: 0,
       reciviedAmount: 0,
       amountError: false,
