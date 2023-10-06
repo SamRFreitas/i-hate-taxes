@@ -1,9 +1,8 @@
 name: Learning Github Actions
 
-on:
-  push:
-    branches:
-    - '*'
+on: [push]
+    # branches:
+    # - '*'
     # - '!develop'
     # - '!main'
     
