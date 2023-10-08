@@ -1,5 +1,7 @@
-![_alt_text_](https://user-images.githubusercontent.com/42484871/174939748-256bb5e4-f2f0-4083-9eeb-62c84820d91c.png)
-
+![Vue.js](https://img.shields.io/badge/vuejs-%2335495e.svg?style=for-the-badge&logo=vuedotjs&logoColor=%234FC08D)
+![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)
 # i-hate-taxes
 
 ## AQUI VINI!!!!
