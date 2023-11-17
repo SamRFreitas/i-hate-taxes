@@ -32,6 +32,7 @@ export default defineComponent({
         dla: 0,
         taxesTotal: 0,
         profit: 0,
+        fundsEarmarkedForAnnualBills: 0
       },
       isModalOpen: false,
       modalTitle: 'Lançamento de Caixa'
@@ -49,7 +50,8 @@ export default defineComponent({
       state.calculatedValues.proLabore = vrau.inss.getProLabore()
       state.calculatedValues.taxesTotal = formatAmount((vrau.inss.getInssTax() + vrau.inss.getIrrfTax() + vrau.das.dasTax + vrau.contabilizeiMonthlyFee), 2)
       state.calculatedValues.profit = vrau.inss.getProLabore() + vrau.dla
-
+      state.calculatedValues.fundsEarmarkedForAnnualBills = vrau.fundsEarmarkedForAnnualBills
+      
       state.isModalOpen = true
     }
 

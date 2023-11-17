@@ -39,6 +39,11 @@
                     <p>{{ values.das }}</p>
                   </div>
 
+                  <div class="flex justify-between text-danger border-b">
+                    <p>Fundos para Despesas Anuais</p>
+                    <p>{{ values.fundsEarmarkedForAnnualBills }}</p>
+                  </div>
+
                   <div class="flex justify-between text-success border-b">
                     <p>Pro-Lábore</p>
                     <p>{{ values.proLabore }}</p>
