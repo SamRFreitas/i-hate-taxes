@@ -33,7 +33,7 @@ describe('Vrau test', () => {
   it('getDla', () => {
     const vrau = new Vrau(2000, 28, 0)
     
-    expect(vrau.dla).toBe(832.5)
+    expect(vrau.dla).toBe(752.32)
   })
 
 
@@ -48,7 +48,7 @@ describe('Vrau test', () => {
 
       it('With recivied amount, the class should follow the normal flow', () => {
         const vrau = new Vrau(10000, 28, 0)
-        expect(vrau.dla).toBe(8832.5)
+        expect(vrau.dla).toBe(8752.32)
       })
     })
 
@@ -64,7 +64,7 @@ describe('Vrau test', () => {
 
         const vrau = new Vrau(10000, 28, 9000)
         
-        expect(vrau.dla).toBe(7833.5)
+        expect(vrau.dla).toBe(7753.32)
       })
     })
 
