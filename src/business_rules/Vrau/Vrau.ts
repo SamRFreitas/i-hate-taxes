@@ -8,6 +8,11 @@ export class Vrau {
   reciviedAmount: number
   minimumWage = 1320 
   contabilizeiMonthlyFee = 54.5
+  rental = 647
+  digitalSignature = 235
+  annualExpense: number
+  fundsEarmarkedForAnnualBills: number
+  numberOfMonthsToSaveMoney = 11
   proLaborePercentage: number
   amountForInssCalculation: number
   isNational: boolean
@@ -23,6 +28,8 @@ export class Vrau {
     this.isNational = isNational
     this.amountForInssCalculation = this.getAmountForInssCalculation()
     this.inss = new Inss(this.amountForInssCalculation)
+    this.annualExpense = this.rental + this.digitalSignature
+    this.fundsEarmarkedForAnnualBills = formatAmount(this.annualExpense / this.numberOfMonthsToSaveMoney, 2)
 
     if (reciviedAmount > 0) {
       this.das = new Das(this.reciviedAmount, this.isNational)
@@ -40,7 +47,7 @@ export class Vrau {
   }
 
   getDla (amount: number): number {
-    const dla = amount - this.das.dasTax - this.inss.proLabore - this.inss.inssTax - this.inss.irrfTax - this.contabilizeiMonthlyFee
+    const dla = amount - this.das.dasTax - this.inss.proLabore - this.inss.inssTax - this.inss.irrfTax - this.contabilizeiMonthlyFee - this.fundsEarmarkedForAnnualBills
     return formatAmount(dla, 2)
   }
 
