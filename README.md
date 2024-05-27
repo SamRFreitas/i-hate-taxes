@@ -26,7 +26,7 @@
 * Github Actions
   * Com muita vontade de aprender e ter meu primeiro contato com CI/CD, achei interessante a escolha do github actions pela facilidade da aplicação no projeto.
     * CI - Adorei a automatização dessa etapa, e fluiu muito bem no projeto.
-    * CD - Não apliquei e não aprendi, pois na escolha de hospedagem na vercel, o deploy foi tão simples e prático que nem precisou do implementação de um CD. Mas deixei um arquivo no caminho ./github/workflows/deploy.yml só para testar a aplicação de uma action focada em apenas um branch. Achei muito interessante a escolha de quais branches vao ativar a action e possuvem inúmeras aplicações pra isso.
+    * CD - Não apliquei e não aprendi, pois na escolha de hospedagem na vercel, o deploy foi tão simples e prático que nem precisou do implementação de um CD. Mas deixei um arquivo no caminho ./github/workflows/deploy.yml só para testar a aplicação de uma action focada em apenas um branch. Achei muito interessante a escolha de quais branches vao ativar a action e possuem inúmeras aplicações pra isso.
    
 ## Projeto
 
@@ -50,7 +50,7 @@
 npm run serve
 ```
 
-#### No entando, se não quiser utilizar docker pode ser do jeito convencional. Lembrando que precisa ter o npm e vue instalados para rodar o projeto. 
+#### No entanto, se não quiser utilizar docker pode ser do jeito convencional. Lembrando que precisa ter o npm e vue instalados para rodar o projeto. 
 
 * Dependências
     * node: 18.14.2
