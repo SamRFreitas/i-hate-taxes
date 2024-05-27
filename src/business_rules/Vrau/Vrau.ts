@@ -6,7 +6,7 @@ import { Inss } from "../Inss/Inss"
 export class Vrau {
   amount: number 
   reciviedAmount: number
-  minimumWage = 1320 
+  minimumWage = 1412 
   contabilizeiMonthlyFee = 115
   rental = 647
   digitalSignature = 235
