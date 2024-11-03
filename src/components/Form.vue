@@ -36,8 +36,8 @@
 
 import { defineComponent, reactive, computed, watch } from 'vue'
 import InputAmount from '../components/InputAmount.vue'
-import BaseToggle from '@/components/BaseToggle.vue';
-import { Vrau } from '@/business_rules/Vrau/Vrau';
+import BaseToggle from '@/components/BaseToggle.vue'
+import { Vrau } from '@/business_rules/Vrau/Vrau'
 export default defineComponent({
   components: {
     BaseToggle,

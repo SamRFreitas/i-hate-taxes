@@ -12,14 +12,13 @@ export class Vrau {
   digitalSignature = 235
   annualExpense: number
   fundsEarmarkedForAnnualBills: number
-  numberOfMonthsToSaveMoney = 11
+  numberOfMonthsToSaveMoney = 12
   proLaborePercentage: number
   amountForInssCalculation: number
   isNational: boolean
   inss: Inss
   das: Das 
   dla: number
-
 
   constructor (amount: number, proLaborePercentage: number, reciviedAmount: number, isNational = false) {
     this.amount = amount
