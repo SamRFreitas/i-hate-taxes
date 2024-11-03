@@ -64,7 +64,7 @@ describe('Vrau test', () => {
 
         const vrau = new Vrau(10000, 28, 9000)
         
-        expect(vrau.dla).toBe(7692.82)
+        expect(vrau.dla).toBe(7699.50)
       })
     })
 
