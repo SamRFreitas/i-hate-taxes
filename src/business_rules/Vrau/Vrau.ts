@@ -7,7 +7,7 @@ export class Vrau {
   amount: number 
   reciviedAmount: number
   minimumWage = 1412 
-  contabilizeiMonthlyFee = 115
+  contabilizeiMonthlyFee = 120
   rental = 647
   digitalSignature = 235
   annualExpense: number
