@@ -48,7 +48,9 @@
 
 #### The command below will create and start a container using Docker to make it easier:
 
-```npm run serve```
+```
+npm run serve
+```
 
 
 #### However, if you prefer not to use Docker, you can run it the conventional way. Keep in mind that you'll need npm and Vue installed.
