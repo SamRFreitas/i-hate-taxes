@@ -6,62 +6,60 @@
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
 
 # I Hate Taxes
-[Link do Projeto](https://i-hate-taxes.vercel.app/)
+[Project Link](https://i-hate-taxes.vercel.app/)
 
-## Esse projeto é um simples sistema para cálculo de impostos, salário e lucros. 
+## This project is a simple system for tax, salary, and profit calculation.
 
-#### Sua principal função é calcular os lucros e gastos de uma conta CNPJ, pois no momento trabalho como PJ.
+#### Its main purpose is to calculate profits and expenses for a CNPJ (corporate) account, since I currently work as a PJ (pessoa jurídica / independent contractor).
 
-## Tecnologias
+## Technologies
 
-#### A escolha das tecnologias utilizadas no projeto foram relcionadas a coisas que eu queria aprender e praticar que no caso são:
+#### The technologies chosen for the project were selected based on things I wanted to learn and practice, which are:
+
 * VueJS
-  * Uma tecnologia que já tenho uma boa experiência, mas queria praticar e entender a nova proposta do composition API da versão 3 do Vue.
-* Typescript
-  * Tive curiosidade em experimentar, pois nunca tinha mexido e utilizado, e por existirem certas regras de negócio relacionadas ao projeto, achei interessante a idea de tipagem no projeto.
+  * I already have solid experience with it, but I wanted to practice and understand the new Composition API proposal in Vue 3.
+* TypeScript
+  * I was curious to experiment with it because I had never used it before. Since the project involves specific business rules, I found the idea of strong typing interesting.
 * TailwindCSS
-  * Escolha confortável, pois já possuo uma boa experiência e queria entregar um layout de uma forma mais rápida.
+  * A comfortable choice — I already have good experience and wanted to deliver a layout quickly.
 * Jest
-  * Com intuito de praticar e aprender mais sobre testes, achei interessante a utilização de uma biblioteca bem difundida no mercado, pois seria possível de achar mais material e exemplos, ajudando no aprendizado de testes.
-* Github Actions
-  * Com muita vontade de aprender e ter meu primeiro contato com CI/CD, achei interessante a escolha do github actions pela facilidade da aplicação no projeto.
-    * CI - Adorei a automatização dessa etapa, e fluiu muito bem no projeto.
-    * CD - Não apliquei e não aprendi, pois na escolha de hospedagem na vercel, o deploy foi tão simples e prático que nem precisou do implementação de um CD. Mas deixei um arquivo no caminho ./github/workflows/deploy.yml só para testar a aplicação de uma action focada em apenas um branch. Achei muito interessante a escolha de quais branches vao ativar a action e possuem inúmeras aplicações pra isso.
-   
-## Projeto
+  * With the goal of practicing and learning more about testing, I chose a widely adopted library so I could find more material and examples to support my learning.
+* GitHub Actions
+  * I was really eager to learn and have my first contact with CI/CD. GitHub Actions was an easy choice because of its integration with the project.
+    * CI – I loved automating this step; it flowed very well in the project.
+    * CD – I didn't apply or learn it because I chose Vercel for hosting, and the deployment was so simple and practical that it didn't need a custom CD pipeline. Still, I left a file at `./github/workflows/deploy.yml` just to test an action focused on a single branch. I found the branch‑based triggering and its many possible applications very interesting.
 
-#### O projeto em si é bem simples, os pontos principais que acho interessante de mencionar são:
-  * A criação de um diretório escrito business_rules onde as regras de todos os cálculos e regras do negócio se encontram. Onde achei interessante a aplicação do typescript.
-  * TDD - Para fins de estudo e aprendizado achei interessante os arquivos de testes estarem do lado dos arquivos que estão sendo testados.
-    * Fora a exceção de um teste de integração que achei melhor isolar em uma parte de testes, pois se tratando de arquivos diferentes, achei melhor seguir o padrão de colocar em uma pasta de tests.
-   
-## Observações
+## Project
 
-##### <b>EU SEI</b>, que os nomes das classes e arquivos devem ser descritivos e bem escolhidos (CLEAN CODE). No entanto por se tratar de um projeto pessoal, onde só eu vou desenvolver, fiz a escolha de nomear uma classe com o apelido de um amigo meu em sua homenagem, que me ajudou <b>MUITO</b> a aplicar e enteder a parte financeira pois ele é contador. A clase em si é a classe Vrau encontrada no caminho /src/business_rules/Vrau/Vrau.ts que seria equivalente a Contador.ts ou no inglês certifiedPublicAccountant.ts ou CPA.ts
+#### The project itself is quite simple. The main points worth mentioning are:
 
-##### Então fica aqui minha homenagem pro meu amigo. <b> MUITO OBRIGADO VRAU!!! :heart: </b>
-##### E meu obrigado ao meu amigo designer que me ajudou com os detalhes da interface, <b> MUITO OBRIGADO IAGUINHO!!! :heart: </b> 
+  * A `business_rules` directory where all the calculation and business logic lives. I found this to be a good place to apply TypeScript.
+  * TDD – for study and learning purposes, I placed the test files right next to the files they are testing.
+    * The only exception is an integration test, which I preferred to isolate in a separate `tests` folder, since it involves different files and I thought it was better to follow the standard practice of keeping them separate.
 
-## Rodando o Projeto Localmente.
+## Notes
 
-#### O comando logo abaixo vai criar e subir um container utilizando o docker para facilitar 
+##### <b>I KNOW</b> that class and file names should be descriptive and well‑chosen (CLEAN CODE). However, since this is a personal project where only I will work on it, I decided to name one class after the nickname of a friend of mine who helped me <b>A LOT</b> to understand the financial side of things (he’s an accountant). The class is `Vrau` located at `/src/business_rules/Vrau/Vrau.ts` – which would be the equivalent of `Accountant.ts` or `certifiedPublicAccountant.ts` / `CPA.ts`.
 
-```
-npm run serve
-```
+##### So here’s my tribute to my friend. <b>THANK YOU SO MUCH, VRAU!!! :heart: </b>
+##### And my thanks to my designer friend who helped me with the interface details. <b>THANK YOU SO MUCH, IAGUINHO!!! :heart: </b> 
 
-#### No entanto, se não quiser utilizar docker pode ser do jeito convencional. Lembrando que precisa ter o npm e vue instalados para rodar o projeto. 
+## Running the Project Locally
 
-* Dependências
+#### The command below will create and start a container using Docker to make it easier:
+
+```npm run serve```
+
+
+#### However, if you prefer not to use Docker, you can run it the conventional way. Keep in mind that you'll need npm and Vue installed.
+
+* Dependencies
     * node: 18.14.2
-    * core-js": "^3.8.3",
-    * "register-service-worker": "^1.7.2",
-    * "vue": "^3.2.13",
-    * "vue-router": "^4.0.3",
-    * "vuex": "^4.0.0"
-    
-
-
+    * core-js: "^3.8.3"
+    * register-service-worker: "^1.7.2"
+    * vue: "^3.2.13"
+    * vue-router: "^4.0.3"
+    * vuex: "^4.0.0"
 
 ```
 npm install
